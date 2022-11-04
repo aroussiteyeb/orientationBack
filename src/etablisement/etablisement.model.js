@@ -12,7 +12,7 @@ const EtablisementSchema = new Schema(
     ville: { type: String, unique: true, required: true },
     region: { type: String, unique: true, required: true },
     description: { type: String, unique: true, required: true },
-    avatar: { type: String, unique: true, required: true },
+    avatar: { type: String,  required: true },
     galorie: [{path:{ type: String, required: true }}],
    
    

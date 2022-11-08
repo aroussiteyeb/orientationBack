@@ -19,11 +19,13 @@ const userSchema = Joi.object().keys({
   email: Joi.string().email({ minDomainSegments: 2 }),
   password: Joi.string().required().min(4),
   confirmPassword: Joi.string().valid(Joi.ref("password")).required(),
+  avatar: Joi.string(),
   referrer: Joi.string(),
 });
 
 exports.Signup = async (req, res) => {
   try {
+
     const result = userSchema.validate(req.body);
     if (result.error) {
       console.log(result.error.message);
@@ -204,6 +206,7 @@ console.log(email,password)
     return res.send({
       success: true,
       message: "User logged in successfully",
+      avatar:user.avatar,
       accessToken: token,
     });
   } catch (err) {

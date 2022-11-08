@@ -18,6 +18,8 @@ const userSchema = new Schema(
 
     referralCode: { type: String, unique: true },
     referrer: { type: String, default: null },
+    avatar: { type: String, required: true },
+
   },
   {
     timestamps: {

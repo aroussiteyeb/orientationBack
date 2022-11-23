@@ -3,19 +3,16 @@ pipeline {
     tools {nodejs "node js"}
 
     stages {
-        stage('Static analysis') {
+        stage('Static Analysis') {
             steps {
                 echo 'Run the static analysis to the code' 
-  
             }
         }
         stage('Compile') {
             steps {
                 echo 'Compile the source code' 
-              
-      // Install dependencies
-      sh 'npm install'
-    
+                // Install dependencies
+                sh 'npm install'
             }
         }
         stage('Security Check') {
@@ -27,14 +24,6 @@ pipeline {
             steps {
                 echo 'Run unit tests from the source code' 
             }
-        }
-        stage ('Deploy') {
-             steps {
-                 env.DEPLOYMENT_ENVIRONMENT = 'prod';
-                 env.PROPERTY_FILE = 'env.prod.properties';
-               
-            }
-    
         }
         stage('Run Integration Tests') {
             steps {

@@ -30,11 +30,8 @@ pipeline {
         }
         stage ('Deploy') {
              steps {
-                 script {
-                branchName = sh(label: 'getBranchName', returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim()
-                                echo "We are currently working on branch: ${branchName}"
-
-            }   
+                 env.DEPLOYMENT_ENVIRONMENT = 'prod';
+                 env.PROPERTY_FILE = 'env.prod.properties';
                
             }
     

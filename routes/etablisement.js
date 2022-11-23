@@ -4,7 +4,7 @@ const router = express.Router();
 const cleanBody = require("../middlewares/cleanbody");
 const { validateToken } = require("../middlewares/validateToken");
 
-const EtablisementController = require("../src/Etablisement/etablisement.controller");
+const EtablisementController = require("../src/etablisement/etablisement.controller");
 
 
 router.post("/EtablisementPost", cleanBody, EtablisementController.EtablisementPost);

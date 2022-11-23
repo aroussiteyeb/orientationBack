@@ -16,7 +16,7 @@ pipeline {
       // Install dependencies
       sh 'npm install'
       // Build assets with eg. webpack 
-      sh 'npm build'
+      sh 'npm start'
     
             }
         }

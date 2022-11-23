@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     stages {
-        stage('checkout') {
+        stage('Static Analysis') {
             steps {
                 echo 'Run the static analysis to the code' 
                 // Clean workspace before checkout

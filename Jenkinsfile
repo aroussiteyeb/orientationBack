@@ -30,7 +30,7 @@ pipeline {
         }
         stage ('Deploy') {
              steps {
-                 echo "We are currently working on branch: ${env.BRANCH_NAME}"
+                 echo "We are currently working on branch: ${BRANCH_NAME}"
                
             }
     

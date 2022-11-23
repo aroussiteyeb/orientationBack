@@ -1,12 +1,10 @@
 pipeline {
     agent any 
     stages {
-        stage('checkout') {
+        stage('Static analysis') {
             steps {
                 echo 'Run the static analysis to the code' 
-                // Clean workspace before checkout
-    step ([$class: 'WsCleanup'])
-    checkout scm
+  
             }
         }
         stage('Compile') {

@@ -10,13 +10,12 @@ pipeline {
         stage('Compile') {
             steps {
                 echo 'Compile the source code' 
-                 env.PATH = "/opt/jenkins/bin:${env.PATH}"
-    catchError {
+              
       // Install dependencies
       sh 'npm install'
       // Build assets with eg. webpack 
       sh 'npm run build'
-    }
+    
             }
         }
         stage('Security Check') {

@@ -15,7 +15,6 @@ pipeline {
                 sh 'rm -rf *.tar.gz'
                  sh 'nodejs --version'
                 sh 'npm install'
-                sh 'gulp lint
             }
         }
         stage('Security Check') {

@@ -13,7 +13,9 @@ pipeline {
                 echo 'Compile the source code' 
                 // Install dependencies
                 sh 'rm -rf *.tar.gz'
+                 sh 'nodejs --version'
                 sh 'npm install'
+                sh 'gulp lint
             }
         }
         stage('Security Check') {
@@ -42,7 +44,6 @@ pipeline {
         stage('Publish Artifacts') {
             steps {
                 echo 'Save the assemblies generated from the compilation' 
-                archiveArtifacts artifacts: '**/*.tar.gz', fingerprint: true
             }
         }
     }

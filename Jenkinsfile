@@ -6,9 +6,9 @@ pipeline {
         stage('Static Analysis') {
             steps {
                 script {
-              scannerHome = tool 'sonar'
+              scannerHome = tool 'sonarQube'
             }
-    withSonarQubeEnv('sonar') { // If you have configured more than one global server connection, you can specify its name
+    withSonarQubeEnv() { // If you have configured more than one global server connection, you can specify its name
       sh "${scannerHome}/bin/sonar-scanner"
     }
             }

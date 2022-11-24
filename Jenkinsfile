@@ -30,7 +30,7 @@ pipeline {
                                echo 'Run deploy' 
 
                   
-              }
+              
           }
       }
         stage('Run Integration Tests') {

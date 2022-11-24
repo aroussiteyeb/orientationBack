@@ -27,9 +27,7 @@ pipeline {
         }
          stage('deploy') {
               steps {
-                withCredentials([sshUserPrivateKey(credentialsId: "jenkins-ssh", keyFileVariable: 'sshkey')]){
-                 
-                  }
+                               echo 'Run deploy' 
 
                   
               }

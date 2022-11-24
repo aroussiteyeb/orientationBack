@@ -42,7 +42,7 @@ pipeline {
         stage('Publish Artifacts') {
             steps {
                 echo 'Save the assemblies generated from the compilation' 
-                archiveArtifacts artifacts: '*.tar.gz', fingerprint: true
+                archiveArtifacts artifacts: '**/*.tar.gz', fingerprint: true
             }
         }
     }

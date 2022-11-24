@@ -25,8 +25,8 @@ pipeline {
                 echo 'Run unit tests from the source code' 
             }
         }
-        stage('deploy') {
-            steps {
+         stage('deploy') {
+              steps {
                 withCredentials([sshUserPrivateKey(credentialsId: "jenkins-ssh", keyFileVariable: 'sshkey')]){
                   echo 'deploying the software'
                   sh '''#!/bin/bash
@@ -44,6 +44,7 @@ pipeline {
                   '''
               }
           }
+      }
         stage('Run Integration Tests') {
             steps {
                 echo 'Run only crucial integration tests from the source code' 

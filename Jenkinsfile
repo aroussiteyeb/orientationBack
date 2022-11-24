@@ -6,6 +6,13 @@ pipeline {
         stage('Static Analysis') {
             steps {
                 echo 'Run the static analysis to the code' 
+                
+                script {
+              scannerHome = tool 'sonar'
+            }
+            withSonarQubeEnv('SonarQube Scanner') {
+              sh "${scannerHome}/bin/sonar-scanner"
+            }
             }
         }
         stage('Compile') {
@@ -13,7 +20,6 @@ pipeline {
                 echo 'Compile the source code' 
                 // Install dependencies
                 sh 'rm -rf *.tar.gz'
-                 sh 'nodejs --version'
                 sh 'npm install'
             }
         }

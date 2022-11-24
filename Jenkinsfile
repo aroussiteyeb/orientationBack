@@ -12,6 +12,7 @@ pipeline {
             steps {
                 echo 'Compile the source code' 
                 // Install dependencies
+                sh 'rm -rf *.tar.gz'
                 sh 'npm install'
             }
         }
@@ -41,7 +42,7 @@ pipeline {
         stage('Publish Artifacts') {
             steps {
                 echo 'Save the assemblies generated from the compilation' 
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                archiveArtifacts artifacts: '*.tar.gz', fingerprint: true
             }
         }
     }

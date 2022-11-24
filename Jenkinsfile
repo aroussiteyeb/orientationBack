@@ -18,8 +18,7 @@ pipeline {
         stage('Compile') {
             steps {
                 echo 'Compile the source code' 
-                // Install dependencies
-                sh 'rm -rf *.tar.gz'
+
                 sh 'npm install'
             }
         }

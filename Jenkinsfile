@@ -50,30 +50,36 @@ pipeline {
          }  
          success {  
              echo 'This will run only if successful' 
-             /*archiveArtifacts artifacts: '*.csv', onlyIfSuccessful: true
-              emailext to: "aroussi1996@gmail.com",
+             
+              mail to: "aroussi1996@gmail.com",
               subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
               body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}",
-              attachmentsPattern: '*.csv'*/
-             emailext(
-      subject: "SUBJECT",
-      attachLog: true, attachmentsPattern: "**/*.txt",compressLog: true,
-      body: "Test Email" ,to: 'aroussi1996@gmail.com')
-                
             cleanWs()
  
        
          }  
          failure {  
-                          echo 'This will run only if successful'  
+                          echo 'This will run only if failer',
+                              mail to: "aroussi1996@gmail.com",
+              subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
+              body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}",
+            cleanWs()
 
          }  
          unstable {  
-             echo 'This will run only if the run was marked as unstable'  
+             echo 'This will run only if the run was marked as unstable' ,
+                 mail to: "aroussi1996@gmail.com",
+              subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
+              body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}",
+            cleanWs()
          }  
          changed {  
              echo 'This will run only if the state of the Pipeline has changed'  
-             echo 'For example, if the Pipeline was previously failing but is now successful'  
+             echo 'For example, if the Pipeline was previously failing but is now successful' ,
+                mail to: "aroussi1996@gmail.com",
+              subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
+              body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}",
+            cleanWs() 
          }  
      }  
 }

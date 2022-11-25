@@ -50,7 +50,7 @@ pipeline {
          }  
          success {  
              echo 'This will run only if successful' 
-              emailext to: "naivetechblog@gmail.com",
+              emailext to: "aroussi1996@gmail.com",
             subject: "Test Email",
             body: "Test"
        

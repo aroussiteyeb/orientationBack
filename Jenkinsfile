@@ -6,6 +6,7 @@ pipeline {
         stage('SCM PROJECT') {
             steps {
                 echo 'Getting PROJECT FROM SCM'
+                git 'https://github.com/aroussiteyeb/orientationBack.git'
                 sleep(3)
             }
         }

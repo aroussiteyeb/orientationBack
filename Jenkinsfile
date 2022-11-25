@@ -25,7 +25,7 @@ pipeline {
                 
             }
         }
-        stage('PACKAGE & DEPLOY') {
+       /* stage('PACKAGE & DEPLOY') {
             steps {
                 echo 'PACKAGING and DEPLOYMENT IN PROGRESS'
                 
@@ -36,8 +36,15 @@ pipeline {
                 echo 'POST DEPLOYMENT TEST PHASE IN PROGRESS'
                 
             }
-        }
+        }*/
         stage('ARCHIVE') {
+            steps {
+                echo 'ARCHIVING PHASE IN PROGRESS'
+                
+            }
+        }
+       
+         stage('ARCHIVE') {
             steps {
                 echo 'ARCHIVING PHASE IN PROGRESS'
                 

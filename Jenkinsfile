@@ -63,15 +63,26 @@ pipeline {
          }  
          failure {  
               echo 'This will run only if failer'
+               mail to: "aroussi1996@gmail.com",
+               subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
+               body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}"
             
 
          }  
          unstable {  
              echo 'This will run only if the run was marked as unstable' 
+             
+               mail to: "aroussi1996@gmail.com",
+               subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
+               body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}"
               
          }  
          changed {  
              echo 'This will run only if the state of the Pipeline has changed'  
+             
+               mail to: "aroussi1996@gmail.com",
+               subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
+               body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}"
             
          }  
      }  

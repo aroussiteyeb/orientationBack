@@ -59,12 +59,12 @@ pipeline {
        
          }  
          failure {  
-              echo 'This will run only if failer',
+              echo 'This will run only if failer'
             
 
          }  
          unstable {  
-             echo 'This will run only if the run was marked as unstable' ,
+             echo 'This will run only if the run was marked as unstable' 
               
          }  
          changed {  

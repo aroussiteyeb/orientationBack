@@ -58,7 +58,7 @@ pipeline {
              emailext(
       subject: "SUBJECT",
       attachLog: true, attachmentsPattern: "**/*.txt",compressLog: true,
-      body: "Test Email" ,to: aroussi1996@gmail.com)
+      body: "Test Email" ,to: 'aroussi1996@gmail.com')
                 
             cleanWs()
  

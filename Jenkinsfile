@@ -20,6 +20,8 @@ pipeline {
         stage('UNIT TEST') {
             steps {
                 echo 'TEST PHASE IN PROGRESS'
+                sh 'npm install --save-dev mocha'
+                sh 'npm test' 
                 sleep(3)
             }
         }

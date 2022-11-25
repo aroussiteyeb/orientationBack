@@ -51,8 +51,11 @@ pipeline {
          success {  
              echo 'This will run only if successful' 
               mail to: "aroussi1996@gmail.com",
-            subject: "Test Email",
-            body: "Test"
+              subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
+              body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}"
+        }
+    }
+}
        
          }  
          failure {  

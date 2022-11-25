@@ -50,11 +50,15 @@ pipeline {
          }  
          success {  
              echo 'This will run only if successful' 
-             archiveArtifacts artifacts: '*.csv', onlyIfSuccessful: true
-              mail to: "aroussi1996@gmail.com",
+             /*archiveArtifacts artifacts: '*.csv', onlyIfSuccessful: true
+              emailext to: "aroussi1996@gmail.com",
               subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
               body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}",
-              attachmentsPattern: '*.csv'
+              attachmentsPattern: '*.csv'*/
+             emailext(
+      subject: "SUBJECT",
+      attachLog: true, attachmentsPattern: "**/*.txt",compressLog: true,
+      body: "Test Email" ,to: aroussi1996@gmail.com)
                 
             cleanWs()
  

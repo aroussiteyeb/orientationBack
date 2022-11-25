@@ -6,7 +6,7 @@ pipeline {
         stage('SCM PROJECT') {
             steps {
                 echo 'Getting PROJECT FROM SCM'
-                git 'https://github.com/aroussiteyeb/orientationBack.git'
+                git branch: 'main', credentialsId: '4883425d-9cb5-479a-a84e-8d800e3f77af', url: 'https://github.com/aroussiteyeb/orientationBack.git'
                 sleep(3)
             }
         }

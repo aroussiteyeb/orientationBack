@@ -50,7 +50,7 @@ pipeline {
          }  
          success {  
              echo 'This will run only if successful' 
-             mail to: "naivetechblog@gmail.com",
+             mail to: "aroussi1996@gmail.com",
             subject: "Test Email",
             body: "Test"
          }  

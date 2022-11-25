@@ -2,50 +2,42 @@ pipeline {
     agent any 
     tools {nodejs "node js"}
 
-    stages {
-        stage('Static Analysis') {
+   stages {
+        stage('SCM PROJECT') {
             steps {
-                script {
-              scannerHome = tool 'sonarQube'
-            }
-    withSonarQubeEnv('sonarQube') { // If you have configured more than one global server connection, you can specify its name
-      sh "${scannerHome}/bin/sonar-scanner"
-    }
+                echo 'Getting PROJECT FROM SCM'
+                sleep(3)
             }
         }
-        stage('Compile') {
+        stage('BUILD') {
             steps {
-                echo 'Compile the source code' 
-
-                sh 'npm install'
+                echo 'BUILD OF Project IN PROGRESS'
+                sh 'npm isntall'
+                sleep(3)
             }
         }
-        stage('Security Check') {
+        stage('UNIT TEST') {
             steps {
-                echo 'Run the security check against the application' 
+                echo 'TEST PHASE IN PROGRESS'
+                sleep(3)
             }
         }
-        stage('Run Unit Tests') {
+        stage('PACKAGE & DEPLOY') {
             steps {
-                echo 'Run unit tests from the source code' 
+                echo 'PACKAGING and DEPLOYMENT IN PROGRESS'
+                sleep(3)
             }
         }
-         stage('deploy') {
-              steps {
-                               echo 'Run deploy' 
-
-                  
-              
-          }
-      }
-        stage('Run Integration Tests') {
+        stage('UI TEST') {
             steps {
-                echo 'Run only crucial integration tests from the source code' 
+                echo 'POST DEPLOYMENT TEST PHASE IN PROGRESS'
+                sleep(3)
             }
         }
-        stage('Publish Artifacts') {
+        stage('ARCHIVE') {
             steps {
-                echo 'Save the assemblies generated from the compilation' 
+                echo 'ARCHIVING PHASE IN PROGRESS'
+                sleep(3)
             }
         }
     }

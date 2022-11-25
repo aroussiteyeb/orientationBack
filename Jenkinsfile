@@ -49,7 +49,7 @@ pipeline {
              echo 'This will always run'  
          }  
          success {  
-             echo 'This will run only if successful' 
+             echo 'This will run only if successful' ,
              
               mail to: "aroussi1996@gmail.com",
               subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",

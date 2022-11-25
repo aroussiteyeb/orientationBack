@@ -37,12 +37,7 @@ pipeline {
                 
             }
         }*/
-        stage('ARCHIVE') {
-            steps {
-                echo 'ARCHIVING PHASE IN PROGRESS'
-                
-            }
-        }
+     
        
          stage('ARCHIVE') {
             steps {

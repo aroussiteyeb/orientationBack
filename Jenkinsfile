@@ -49,8 +49,9 @@ pipeline {
     post {  
          always {  
              echo 'This will always run' 
-               sh 'rm -rf *.tar.gz'
-               archiveArtifacts artifacts: '*.tar.gz', fingerprint: true
+               //sh 'rm -rf *.tar.gz'
+             sh 'tar czf Archive_$BUILD_NUMBER.tar.gz node_modules main.js package.json package.json'
+               //archiveArtifacts artifacts: '*.tar.gz', fingerprint: true
                //archiveArtifacts artifacts: '**/*.min.*'
                // junit 'build/test-results/**/TEST-*.xml'
          }  

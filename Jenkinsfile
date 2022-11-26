@@ -42,6 +42,9 @@ pipeline {
          stage('ARCHIVE') {
             steps {
                 echo 'ARCHIVING PHASE IN PROGRESS'
+                 sh 'rm -rf *.tar.gz'
+                 sh 'tar czf Archive_$BUILD_NUMBER.tar.gz **/*.*'
+                junit '**/**/TEST-*.xml
                 
             }
         }
@@ -49,8 +52,7 @@ pipeline {
     post {  
          always {  
              echo 'This will always run' 
-              sh 'rm -rf *.tar.gz'
-             sh 'tar czf Archive_$BUILD_NUMBER.tar.gz **/*.*'
+             
                //archiveArtifacts artifacts: '*.tar.gz', fingerprint: true
                //archiveArtifacts artifacts: '**/*.min.*'
                // junit 'build/test-results/**/TEST-*.xml'

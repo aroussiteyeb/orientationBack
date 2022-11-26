@@ -46,7 +46,7 @@ pipeline {
                 echo 'ARCHIVING PHASE IN PROGRESS'
                  sh 'rm -rf *.tar.gz'
                  sh 'tar czf Archive_$BUILD_NUMBER.tar.gz **/*.*'
-                junit '**/mochaReport.xml'
+                //junit '**/mochaReport.xml'
                 
             }
         }

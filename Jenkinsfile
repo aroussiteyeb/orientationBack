@@ -21,7 +21,6 @@ pipeline {
             steps {
                 echo 'TEST PHASE IN PROGRESS'
                 sh 'npm install --save-dev mocha'
-                sh 'npm install -g mocha-junit-reporter'
                 sh 'rm -rf mochaReport.xml'
                 sh 'npm test > mochaReport.xml' 
                 

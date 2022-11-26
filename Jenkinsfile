@@ -49,8 +49,9 @@ pipeline {
     post {  
          always {  
              echo 'This will always run' 
-               //archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
-               archiveArtifacts artifacts: '**/*.min.*'
+               sh 'rm -rf *.tar.gz'
+               archiveArtifacts artifacts: '*.tar.gz', fingerprint: true
+               //archiveArtifacts artifacts: '**/*.min.*'
                // junit 'build/test-results/**/TEST-*.xml'
          }  
          success {  

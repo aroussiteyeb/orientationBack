@@ -21,7 +21,9 @@ pipeline {
             steps {
                 echo 'TEST PHASE IN PROGRESS'
                 sh 'npm install --save-dev mocha'
-                sh 'npm test' 
+                sh 'npm install -g mocha-junit-reporter'
+                sh 'rm -rf mochaReport.xml'
+                sh 'npm test > mochaReport.xml' 
                 
             }
         }
@@ -44,7 +46,7 @@ pipeline {
                 echo 'ARCHIVING PHASE IN PROGRESS'
                  sh 'rm -rf *.tar.gz'
                  sh 'tar czf Archive_$BUILD_NUMBER.tar.gz **/*.*'
-                junit '**/**/TEST-*.xml'
+                junit '**/mochaReport.xml'
                 
             }
         }

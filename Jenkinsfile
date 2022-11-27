@@ -26,13 +26,14 @@ pipeline {
                 
             }
         }
-       /* stage('PACKAGE & DEPLOY') {
+        stage('PACKAGE & DEPLOY') {
             steps {
                 echo 'PACKAGING and DEPLOYMENT IN PROGRESS'
+                sh 'npm start'
                 
             }
         }
-        stage('UI TEST') {
+       /* stage('UI TEST') {
             steps {
                 echo 'POST DEPLOYMENT TEST PHASE IN PROGRESS'
                 

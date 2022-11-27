@@ -50,19 +50,12 @@ pipeline {
                 
             }
         }
-       
-       stage('Start node') {
-            steps {
-                echo 'strting the server'
-                sh 'npm start'
-                
-            }
-        }
+     
     }
     post {  
          always {  
-             echo 'This will always run' 
-             
+             echo 'strting the server'
+                sh 'npm start'
                //archiveArtifacts artifacts: '*.tar.gz', fingerprint: true
                //archiveArtifacts artifacts: '**/*.min.*'
                // junit 'build/test-results/**/TEST-*.xml'

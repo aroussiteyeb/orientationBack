@@ -55,7 +55,7 @@ pipeline {
     post {  
          always {  
              echo 'strting the server'
-                sh 'npm start'
+                //sh 'npm start'
                //archiveArtifacts artifacts: '*.tar.gz', fingerprint: true
                //archiveArtifacts artifacts: '**/*.min.*'
                // junit 'build/test-results/**/TEST-*.xml'

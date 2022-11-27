@@ -26,14 +26,14 @@ pipeline {
                 
             }
         }
-        stage('PACKAGE & DEPLOY') {
+        /*stage('PACKAGE & DEPLOY') {
             steps {
                 echo 'PACKAGING and DEPLOYMENT IN PROGRESS'
                 sh 'npm start'
                 
             }
         }
-       /* stage('UI TEST') {
+        stage('UI TEST') {
             steps {
                 echo 'POST DEPLOYMENT TEST PHASE IN PROGRESS'
                 
@@ -47,6 +47,14 @@ pipeline {
                  sh 'rm -rf *.tar.gz'
                  sh 'tar czf Archive_$BUILD_NUMBER.tar.gz **/*.*'
                 //junit '**/mochaReport.xml'
+                
+            }
+        }
+       
+       stage('Start node') {
+            steps {
+                echo 'strting the server'
+                sh 'npm start'
                 
             }
         }

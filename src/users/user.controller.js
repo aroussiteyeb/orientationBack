@@ -207,6 +207,7 @@ console.log(email,password)
       success: true,
       message: "User logged in successfully",
       avatar:user.avatar,
+      userId:user.userId,
       accessToken: token,
     });
   } catch (err) {

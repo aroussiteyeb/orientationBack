@@ -6,6 +6,7 @@ const Filiere = require("../Filiere/filiere.model");
 const Domaine = require("../Domaine/domaine.model");
 
 
+
 const resultSimple = require("../filtring/helpers/resultSimple.json");
 const { string } = require("joi");
 //let  output2 = require("../filtring/helpers/output.json");

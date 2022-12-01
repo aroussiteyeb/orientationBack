@@ -14,6 +14,7 @@ const associationfe = require("./routes/associationfe");
 const associationpe = require("./routes/associationpe");
 const simpleFiltring = require("./routes/Filtring/simple");
 const CalculeScore = require("./routes/Score");
+const panier = require("./routes/Panier");
 
 
 
@@ -56,6 +57,7 @@ app.use("/associationfe", associationfe);
 app.use("/associationpe", associationpe);
 app.use('/simpleFiltring',simpleFiltring);
 app.use('/CalculeScore',CalculeScore);
+app.use('/panier',panier);
 //app.post('/advencedFiltring',advencedFiltring); //new user
 
 

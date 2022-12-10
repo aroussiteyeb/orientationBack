@@ -13,6 +13,8 @@ const parcours = require("./routes/parcours");
 const associationfe = require("./routes/associationfe");
 const associationpe = require("./routes/associationpe");
 const simpleFiltring = require("./routes/Filtring/simple");
+const advencedFiltring = require("./routes/Filtring/advenced");
+
 const spamController = require("./routes/spam");
 
 const CalculeScore = require("./routes/Score");
@@ -58,6 +60,8 @@ app.use("/parcours", parcours);
 app.use("/associationfe", associationfe);
 app.use("/associationpe", associationpe);
 app.use('/simpleFiltring',simpleFiltring);
+app.use('/advencedFiltring',advencedFiltring);
+
 app.use('/CalculeScore',CalculeScore);
 
 app.use('/panier',panier);
